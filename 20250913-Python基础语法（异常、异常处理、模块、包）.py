@@ -1,6 +1,8 @@
 # 一、异常（Exceptions）：程序的 “小故障”
 # 1. 什么是异常？
 # 异常是 Python 程序运行时遇到的错误（不是语法错误），会导致程序 “崩溃” 停止。比如用字符串除以数字、访问列表不存在的位置，都会触发异常。
+from terraria_tools import calc_damage
+
 
 # 2. 初学者必知的 5 种常见异常
 # 异常类型	        发生场景示例	                                            通俗理解
@@ -107,15 +109,24 @@
 # print(calc.add(2, 3))  # 输出5（必须加“calc.”）
 # print(calc.PI)         # 输出3.1415
 #
+# import terraria_tools
+# print(terraria_tools.calc_damage(40,1.5))
+# print(terraria_tools.MAX_HEALTH)
+
 # # 方式2：导入指定内容
 # from calc import multiply, PI
 # print(multiply(4, 5))  # 输出20（直接用函数名）
 # print(PI)              # 输出3.1415
 #
+# from terraria_tools import calc_damage, drop_chance ,MAX_HEALTH
+# print(calc_damage(40,1.5))
+# print(drop_chance(123,5))
+# print(MAX_HEALTH)
 # # 方式3：导入模块并起别名
 # import calc as c
 # print(c.add(10, 20))   # 输出30（用别名“c.”代替“calc.”）
-
+# import terraria_tools as tt
+# print(tt.drop_chance(45,45))
 # 四、包（Packages）：模块的 “收纳盒”
 # 当模块很多时，需要用 “包” 来分类管理 —— 包是一个包含多个模块的文件夹，相当于 “收纳盒”，把相关的模块放在一起。
 # 1. 包的基础结构（必须掌握）
@@ -135,13 +146,19 @@
 # from my_package.math_tools import add
 # print(add(3, 4))  # 输出7
 #
+# from terraria_package.weapon_tools import calc_weapon_damage
+# print(calc_weapon_damage(45,80))
 # # 2. 导入包中的整个模块
 # from my_package import string_tools
 # print(string_tools.upper("hello"))  # 假设string_tools有upper函数，输出HELLO
 #
+# from terraria_package import weapon_tools
+# print(weapon_tools.calc_weapon_damage(7,5))
 # # 3. 导入子包中的模块
 # from my_package.sub_package import time_tools
 # time_tools.show_current_time()  # 调用子包模块的函数
+# from terraria_package.world_tools import biome_tools
+# biome_tools.spawn_boss("克苏鲁之眼")
 # 方式 2：相对导入（仅在包内部使用，用 “.” 表示路径）
 # 只有在 “包内部的模块” 中，才能用相对导入（比如在 string_tools.py 中导入 math_tools.py）：
 # # 在 my_package/string_tools.py 中

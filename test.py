@@ -1,3 +1,5 @@
+print("我是test.py里面的代码")
+print("当前模块的__name__是：", __name__)
 ###2025年7月10日学习笔记：
 #1.Python和pycharm安装，环境变量配置
 """
